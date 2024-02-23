@@ -53,14 +53,22 @@ class _Costom_containerState extends State<Costom_container> {
               margin: EdgeInsets.only(left: 5),
               height: double.infinity,
               width: 5,
-              color: isHovered ? Colors.grey.shade900:Colors.white ,
+              decoration: BoxDecoration(
+                gradient:  LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [Colors.white,Colors.blue,Colors.purple,Colors.pink,  ],
+                ),
+                color: isHovered ? Colors.grey.shade900:Colors.white ,
+              ),
+
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment:CrossAxisAlignment.start,
               children: [
-                Text(widget.title,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold, color: isHovered ? Colors.grey.shade900:Colors.white ,),),
-                Text(widget.discription,style: TextStyle(fontSize: 12,fontWeight: FontWeight.bold,color: Colors.grey.shade800),),
+                Text(widget.title,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold, color: isHovered ? Colors.grey.shade900:Colors.blue ,),),
+                Text(widget.discription,style: TextStyle(fontSize: 12,fontWeight: FontWeight.bold,color: Colors.pinkAccent),),
 
 
               ],
@@ -75,6 +83,114 @@ class _Costom_containerState extends State<Costom_container> {
 
 
 //////////////////second/////////////////////////////////////////////
+class pro_container extends StatefulWidget {
+  const pro_container({super.key});
+
+  @override
+  State<pro_container> createState() => _pro_containerState();
+}
+
+class _pro_containerState extends State<pro_container> {
+  var  isHovered = false;
+  @override
+  Widget build(BuildContext context) {
+    return  Container(
+      margin: EdgeInsets.only(left: 10,right: 10),
+      height:double.infinity,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        gradient: isHovered
+            ? LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Colors.white,Colors.blue,Colors.purple,Colors.pink,  ],
+        )
+            : null,
+        color: isHovered ? null : Colors.grey.shade900,
+        borderRadius: BorderRadius.circular(10),
+      ),
+
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(
+            margin: EdgeInsets.only(left: 5,top: 10),
+            height: double.infinity,
+            width: 5,
+            decoration: BoxDecoration(
+              gradient:  LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.white,Colors.blue,Colors.purple,Colors.pink,  ],
+              ),
+              color: isHovered ? Colors.grey.shade900:Colors.white ,
+            ),
+
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment:CrossAxisAlignment.start,
+            children: [
+              Text('Ecommerce App',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold, color: isHovered ? Colors.grey.shade900:Colors.blue ,),),
+              Text('There is an app of full functional ',style: TextStyle(fontSize: 12,fontWeight: FontWeight.bold,color: Colors.pinkAccent),),
+              Row(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          Colors.white,
+                          Colors.blue,
+                          Colors.pink,
+                        ],
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.design_services,color: Colors.black,),
+                        Text('UX & UI',style: TextStyle(fontWeight: FontWeight.bold),)
+
+                      ],
+                    ),
+                    margin: EdgeInsets.all(5),
+                    height: 35,width: 150, ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          Colors.white,
+                          Colors.blue,
+                          Colors.pink,
+                        ],
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.code,color: Colors.black,),
+                        Text('Code',style: TextStyle(fontWeight: FontWeight.bold),)
+
+                      ],
+                    ),
+                    margin: EdgeInsets.all(5),
+                    height: 35,width: 150, ),
+                ],
+              ),
+
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
 
 
 //////////////////////Costum Widget /////////////////////////
